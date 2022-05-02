@@ -28,7 +28,7 @@ cad_jpy_df.head()
 cad_jpy_df.Price.plot(figsize=(20,10))
 ```
 ### result
-picture
+![](https://github.com/bleachevil/Timeseries-homework/blob/main/time_series_homework_pic/initial_time_series_ploting.png?raw=true)
 
 ### Question and answer
 Question: Do you see any patterns, long-term and/or short? <br />
@@ -48,7 +48,8 @@ df = pd.concat([df_price,df_noise,df_trend], axis= 'columns')
 df
 ```
 ### result and plot
-picture1&2
+![](https://github.com/bleachevil/Timeseries-homework/blob/main/time_series_homework_pic/decomposition1.png?raw=true)
+![](https://github.com/bleachevil/Timeseries-homework/blob/main/time_series_homework_pic/decomposition2.png?raw=true)
 
 ### Question and answer
 Question: Do you see any patterns, long-term and/or short? <br />
@@ -58,7 +59,7 @@ Answer: the trend is matching with the price.
 ```
 df['noise'].plot(figsize=(20,10),title='Noise')
 ```
-picture 
+![](https://github.com/bleachevil/Timeseries-homework/blob/main/time_series_homework_pic/noise.png?raw=true) 
 
 ### Forecasting Returns using an ARMA Model
 ```
@@ -73,7 +74,7 @@ results.summary()
 ```
 
 ### result of summary for ARMA
-picture arma 1
+![](https://github.com/bleachevil/Timeseries-homework/blob/main/time_series_homework_pic/ARMA1.png?raw=true)
 
 ### Plot the 5 Day Returns Forecast
 ```
@@ -81,7 +82,7 @@ res = results.forecast(steps=5)
 df_res = pd.DataFrame(res[0])
 df_res.plot()
 ```
-picture arma 2 <br />
+![](https://github.com/bleachevil/Timeseries-homework/blob/main/time_series_homework_pic/ARMA2.png?raw=true)
 
 ### Question and answer
 Question: Based on the p-value, is the model a good fit? <br />
@@ -96,7 +97,7 @@ results_ARIMA.summary()
 ```
 
 ### result of summary for ARIMA
-Picture of ARIMA
+![](https://github.com/bleachevil/Timeseries-homework/blob/main/time_series_homework_pic/ARIMA1.png?raw=true)
 
 ### Plot the 5 Day Price Forecast
 ```
@@ -104,7 +105,7 @@ res = results_ARIMA.forecast(steps=5)
 df_res = pd.DataFrame(res[0])
 df_res.plot(figsize=(20,10))
 ```
-picture of ARIMA2
+![](https://github.com/bleachevil/Timeseries-homework/blob/main/time_series_homework_pic/ARIMA2.png?raw=true)
 
 ### Question and answer
 Question: What does the model forecast will happen to the Japanese Yen in the near term? <br />
@@ -121,7 +122,7 @@ res.summary()
 ```
 
 ### result of summary for GARCH model
-picture of GARCH
+![](https://github.com/bleachevil/Timeseries-homework/blob/main/time_series_homework_pic/GARCH1.png?raw=true)
 
 
 ### volatility forecasts
@@ -137,7 +138,7 @@ final.head()
 final.plot()
 ```
 ### forecast reuslt
-picture of GARCH 2
+![](https://github.com/bleachevil/Timeseries-homework/blob/main/time_series_homework_pic/GARCH2.png?raw=true)
 
 ### Question and answer
 Question: What does the model forecast will happen to volatility in the near term? <br />
@@ -179,14 +180,14 @@ cad_jpy_df['Return'] = cad_jpy_df.Price.pct_change()
 cad_jpy_df.dropna(inplace=True)
 cad_jpy_df.head()
 ```
-picture of data prepartion
+![](https://github.com/bleachevil/Timeseries-homework/blob/main/time_series_homework_pic/ra_datapreparation.png?raw=true)
 ### Lagged Returns
 ```
 cad_jpy_df['Lagged_Return'] = cad_jpy_df.Return.shift()
 cad_jpy_df.dropna(inplace=True)
 cad_jpy_df.head()
 ```
-picture of lagged returns
+![](https://github.com/bleachevil/Timeseries-homework/blob/main/time_series_homework_pic/ra_lagreturn.png?raw=true)
 
 ### Train Test Split
 ```
@@ -198,8 +199,7 @@ y_train = train["Return"]
 y_test = test["Return"]
 X_train.head()
 ```
-picture of data x train
-
+![](https://github.com/bleachevil/Timeseries-homework/blob/main/time_series_homework_pic/ra_Train_test.png?raw=true)
 ### Linear Regression Model
 ```
 from sklearn.linear_model import LinearRegression
@@ -215,7 +215,8 @@ Results["Predicted Return"] = predictions
 Results.head(2)
 Results[:20].plot(subplots=True)
 ```
-picture of prediction
+
+![](https://github.com/bleachevil/Timeseries-homework/blob/main/time_series_homework_pic/ra_testingdata.png?raw=true)
 
 ### Out-of-Sample Performance
 ```
